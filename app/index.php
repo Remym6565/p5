@@ -14,7 +14,7 @@
     </header>
     <main>
         <div id="liste-oeuvres">
-<!-- comment vxxxxdfsvxgdr -->
+<!-- comment a -->
             <?php include('oeuvres.php'); ?>   
             <?php foreach($oeuvres as $cle => $valeur): ?>
                 <article class="oeuvre">
