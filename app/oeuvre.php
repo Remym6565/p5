@@ -16,9 +16,17 @@
         <div id="liste-oeuvres">
 
             <?php include('oeuvres.php'); ?>   
-            <?php  
-                $id=$_GET["oeuvre"]
-            ?>
+            <?php  $id=$_GET["oeuvre"]; ?>
+            <?php foreach($oeuvres as $cle => $valeur): ?>
+                <article class="oeuvre">
+                <a href="oeuvre.php?oeuvre='.cle.'">
+                    <img src="<?= $valeur['image'] ?>" alt="Dodomu">
+                    <h2><?= $valeur['titre'] ?></h2>
+                    <p class="description"><?= $valeur['auteur'] ?></p>
+                </a>
+                </article>
+            <?php endforeach ; ?>
+
             
 
             <article id="detail-oeuvre">
