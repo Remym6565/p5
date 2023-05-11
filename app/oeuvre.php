@@ -16,7 +16,9 @@
         <div id="liste-oeuvres">
 
             <?php include('oeuvres.php'); ?>   
-            <?php  ?>
+            <?php  
+                $id=$_GET["oeuvre"]
+            ?>
             
 
             <article id="detail-oeuvre">
