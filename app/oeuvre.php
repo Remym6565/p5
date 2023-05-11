@@ -17,7 +17,9 @@
 
             <?php include('oeuvres.php'); ?>   
             <?php  $id=$_GET["oeuvre"]; ?>
-            <?php foreach($oeuvres as $cle => $valeur): ?>
+            <?php  $valeur=$oeuvres[id]; ?>
+            <!--<?php foreach($oeuvres as $cle => $valeur): ?>
+            <?php if($cle == $id): ?>-->
                 <article class="oeuvre">
                 <a href="oeuvre.php?oeuvre='.cle.'">
                     <img src="<?= $valeur['image'] ?>" alt="Dodomu">
@@ -25,7 +27,8 @@
                     <p class="description"><?= $valeur['auteur'] ?></p>
                 </a>
                 </article>
-            <?php endforeach ; ?>
+            <!--<?php endif ; ?>
+            <?php endforeach ; ?>-->
 
             
 
