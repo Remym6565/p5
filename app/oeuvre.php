@@ -14,39 +14,19 @@
     </header>
     <main>
         <div id="liste-oeuvres">
-
             <?php include('oeuvres.php'); ?>   
-            <?php  $id=$_GET["oeuvre"]; ?>
-            <?php  $valeur=$oeuvres[id]; ?>
-            <!--<?php foreach($oeuvres as $cle => $valeur): ?>
-            <?php if($cle == $id): ?>-->
-                <article class="oeuvre">
-                <a href="oeuvre.php?oeuvre='.cle.'">
-                    <img src="<?= $valeur['image'] ?>" alt="Dodomu">
-                    <h2><?= $valeur['titre'] ?></h2>
-                    <p class="description"><?= $valeur['auteur'] ?></p>
-                </a>
+            <?php $cle=$_GET['oeuvre']; ?>
+            <?php $valeur=$oeuvres[$cle]; ?>
+                <article id="detail-oeuvre">
+                    <div id="img-oeuvre">
+                        <img src="<?= $valeur['image'] ?>" alt="<?= $valeur['titre'] ?>">
+                    </div>
+                    <div id="contenu-oeuvre">
+                        <h1><?= $valeur['titre'] ?></h1>
+                        <p class="description"><?= $valeur['auteur'] ?></p>
+                        <p class="description-complete"><?= $valeur['description'] ?></p>
+                    </div>
                 </article>
-            <!--<?php endif ; ?>
-            <?php endforeach ; ?>-->
-
-            
-
-            <article id="detail-oeuvre">
-                <div id="img-oeuvre">
-                    <img src="img/clark-van-der-beken.png" alt="Dodomu">
-                </div>
-                <div id="contenu-oeuvre">
-                    <h1>Dodomu</h1>
-                    <p class="description">Mia Tozerski</p>
-                    <p class="description-complete">
-                    Mia Tozerski est une artiste peintre ukrainienne réfugiée de la guerre. Sur cette œuvre, Dodomu ("domicile" en ukrainien), elle nous montre la tristesse du peuple ukrainien qu'elle partage, ayant elle-même dû quitter son foyer. L'œuvre évoque le drapeau liquéfié d'une Ukraine en souffrance, pleurant la mort de ses compatriotes. Ce travail chargé d'émotion est le symbole d'un événement qui marquera l'Histoire. Cette peinture à l'acrylique rayonne grâce à son fond lisse et ses mélanges de couleurs éclatantes.
-                    </p>
-                </div>
-    </article>
-
-
-
         </div>
     </main>
     <footer>
