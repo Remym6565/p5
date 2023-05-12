@@ -18,7 +18,7 @@
             <?php foreach($oeuvres as $cle => $valeur): ?>
                 <article class="oeuvre">
                 <a href="oeuvre.php?oeuvre=<?= $cle; ?>">
-                    <img src="<?= $valeur['image'] ?>" alt="Dodomu">
+                    <img src="<?= $valeur['image'] ?>" alt="<?= $valeur['titre'] ?>">
                     <h2><?= $valeur['titre'] ?></h2>
                     <p class="description"><?= $valeur['auteur'] ?></p>
                 </a>

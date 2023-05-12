@@ -15,8 +15,8 @@
     <main>
         <div id="liste-oeuvres">
             <?php include('oeuvres.php'); ?>   
-            <?php $cle=$_GET['oeuvre']; ?>
-            <?php $valeur=$oeuvres[$cle]; ?>
+            <?php $id=$_GET['oeuvre']; ?>
+            <?php $valeur=$oeuvres[$id]; ?>
                 <article id="detail-oeuvre">
                     <div id="img-oeuvre">
                         <img src="<?= $valeur['image'] ?>" alt="<?= $valeur['titre'] ?>">
