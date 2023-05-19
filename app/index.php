@@ -1,3 +1,4 @@
+<?php require('oeuvres.php'); ?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -9,25 +10,20 @@
     <title>The ArtBox</title>
 </head>
 <body>
-    <header>
-        <?php include('header.php'); ?>
-    </header>
+    <?php require('header.php'); ?>
     <main>
         <div id="liste-oeuvres">
-            <?php include('oeuvres.php'); ?>   
-            <?php foreach($oeuvres as $cle => $valeur): ?>
+            <?php foreach($oeuvres as $cle => $oeuvre): ?>
                 <article class="oeuvre">
-                <a href="oeuvre.php?oeuvre=<?= $cle; ?>">
-                    <img src="<?= $valeur['image'] ?>" alt="<?= $valeur['titre'] ?>">
-                    <h2><?= $valeur['titre'] ?></h2>
-                    <p class="description"><?= $valeur['auteur'] ?></p>
-                </a>
-            </article>
+                    <a href="oeuvre.php?id=<?= $cle; ?>">
+                        <img src="<?= $oeuvre['image'] ?>" alt="<?= $oeuvre['titre'] ?>">
+                        <h2><?= $oeuvre['titre'] ?></h2>
+                        <p class="description"><?= $oeuvre['auteur'] ?></p>
+                    </a>
+                </article>
             <?php endforeach ; ?>    
         </div>
     </main>
-    <footer>
-        <?php include('footer.php'); ?>    
-    </footer>
+    <?php require('footer.php'); ?>    
 </body>
 </html>

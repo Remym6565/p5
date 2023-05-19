@@ -1,3 +1,7 @@
+<?php 
+    require('oeuvres.php');  
+    $oeuvre = $oeuvres[$_GET['id']]; 
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -9,28 +13,25 @@
     <title>The ArtBox</title>
 </head>
 <body>
-    <header>
-        <?php include('header.php'); ?>
-    </header>
+    <?php require('header.php'); ?>
     <main>
+        <?php if(array_key_exists($_GET['id'],$oeuvres)): ?>
         <div id="liste-oeuvres">
-            <?php include('oeuvres.php'); ?>   
-            <?php $id=$_GET['oeuvre']; ?>
-            <?php $valeur=$oeuvres[$id]; ?>
                 <article id="detail-oeuvre">
                     <div id="img-oeuvre">
-                        <img src="<?= $valeur['image'] ?>" alt="<?= $valeur['titre'] ?>">
+                        <img src="<?= $oeuvre['image'] ?>" alt="<?= $oeuvre['titre'] ?>">
                     </div>
                     <div id="contenu-oeuvre">
-                        <h1><?= $valeur['titre'] ?></h1>
-                        <p class="description"><?= $valeur['auteur'] ?></p>
-                        <p class="description-complete"><?= $valeur['description'] ?></p>
+                        <h1><?= $oeuvre['titre'] ?></h1>
+                        <p class="description"><?= $oeuvre['auteur'] ?></p>
+                        <p class="description-complete"><?= $oeuvre['description'] ?></p>
                     </div>
                 </article>
         </div>
+        <?php else: ?>
+            <p>Cette oeuvre n'existe pas</p>
+        <?php endif; ?>
     </main>
-    <footer>
-        <?php include('footer.php'); ?>    
-    </footer>
+    <?php require('footer.php'); ?>    
 </body>
 </html>
